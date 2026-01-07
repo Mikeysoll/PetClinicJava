@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import specs.OwnerSpecs;
 
+import static assertions.OwnerAssertions.assertOwnerIsValid;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class DeleteOwnerTest extends TestBase {
@@ -15,12 +16,7 @@ public class DeleteOwnerTest extends TestBase {
     public void deleteOwner() {
         OwnerResponse owner = OwnerSpecs.createRandomOwner();
 
-        assertNotNull(owner.getId());
-        assertNotNull(owner.getFirstName());
-        assertNotNull(owner.getLastName());
-        assertNotNull(owner.getAddress());
-        assertNotNull(owner.getCity());
-        assertNotNull(owner.getTelephone());
+        assertOwnerIsValid(owner);
 
         OwnerSpecs.deleteOwner(owner.getId());
     }
