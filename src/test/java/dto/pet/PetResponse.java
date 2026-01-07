@@ -17,7 +17,7 @@ public class PetResponse {
     private String name;
     private String birthDate;
     private PetTypeResponse type;
-    private String id;
+    private Integer id;
     private String ownerId;
     private List<VisitResponse> visits;
 }

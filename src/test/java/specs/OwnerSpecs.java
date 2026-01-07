@@ -56,13 +56,12 @@ public class OwnerSpecs {
                 .spec(ResponseSpec.noContent204());
     }
 
-    public static OwnerResponse getOwnerById(int id) {
+    public static OwnerResponse getOwnerById(int ownerId) {
         return given()
                 .spec(RequestSpec.baseRequestSpec())
                 .when()
-                .get("/api/owners/{id}" + id)
+                .get("/api/owners/{ownerId}", ownerId)
                 .then()
-                .log().body()
                 .spec(ResponseSpec.ok200())
                 .extract().as(OwnerResponse.class);
     }
