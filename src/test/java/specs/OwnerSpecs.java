@@ -36,7 +36,7 @@ public class OwnerSpecs {
     }
 
     public static OwnerResponse[] getAllOwners() {
-        return  given()
+        return given()
                 .spec(RequestSpec.baseRequestSpec())
                 .when()
                 .get("/api/owners")
@@ -54,5 +54,16 @@ public class OwnerSpecs {
                 .then()
                 .log().body()
                 .spec(ResponseSpec.noContent204());
+    }
+
+    public static OwnerResponse getOwnerById(int id) {
+        return given()
+                .spec(RequestSpec.baseRequestSpec())
+                .when()
+                .get("/api/owners/{id}" + id)
+                .then()
+                .log().body()
+                .spec(ResponseSpec.ok200())
+                .extract().as(OwnerResponse.class);
     }
 }

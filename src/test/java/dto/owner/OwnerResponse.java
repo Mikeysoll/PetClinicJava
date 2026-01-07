@@ -2,6 +2,7 @@ package dto.owner;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import dto.pet.PetResponse;
+import dto.pettype.PetTypeResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

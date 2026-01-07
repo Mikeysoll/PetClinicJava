@@ -14,7 +14,6 @@ public class GetOwnerListTest extends TestBase {
     @Tag("owner")
     public void getOwnerListTest() {
         OwnerResponse[] owners = getAllOwners();
-
         assertTrue(owners.length > 0, "Список владельцев не должен быть пустым.");
     }
 }

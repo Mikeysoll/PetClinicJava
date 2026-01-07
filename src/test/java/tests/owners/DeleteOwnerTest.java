@@ -15,9 +15,7 @@ public class DeleteOwnerTest extends TestBase {
     @Tag("owner")
     public void deleteOwner() {
         OwnerResponse owner = OwnerSpecs.createRandomOwner();
-
         assertOwnerIsValid(owner);
-
         OwnerSpecs.deleteOwner(owner.getId());
     }
 }

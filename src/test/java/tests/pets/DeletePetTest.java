@@ -2,10 +2,10 @@ package tests.pets;
 
 import base.RequestSpec;
 import base.TestBase;
-import dto.pet.PetResponse;
+import dto.pettype.PetTypeResponse;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import specs.PetSpecs;
+import specs.PetTypeSpecs;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -16,12 +16,12 @@ public class DeletePetTest extends TestBase {
     @Test
     @Tag("pet")
     public void deletePetTest() {
-        PetResponse pet = PetSpecs.createRandomPet();
+        PetTypeResponse pet = PetTypeSpecs.createRandomPetType();
 
         assertNotNull(pet.getId());
         assertNotNull(pet.getName());
 
-        PetSpecs.deletePet(pet.getId());
+        PetTypeSpecs.deletePetType(pet.getId());
 
         int statusCode =
                 given()

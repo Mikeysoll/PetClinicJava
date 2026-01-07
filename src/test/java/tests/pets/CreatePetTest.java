@@ -1,21 +1,21 @@
 package tests.pets;
 
 import base.TestBase;
-import dto.pet.PetResponse;
+import dto.pettype.PetTypeResponse;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import specs.PetSpecs;
+import specs.PetTypeSpecs;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static specs.PetSpecs.*;
+import static specs.PetTypeSpecs.*;
 
 public class CreatePetTest extends TestBase {
 
     @Test
     @Tag("pet")
     public void createPetTest() {
-        PetResponse pet = createPet("kitten");
+        PetTypeResponse pet = createPet("kitten");
 
         assertNotNull(pet.getId(),"ID должен быть сгенерирован");
         assertEquals("kitten",pet.getName());
@@ -23,7 +23,7 @@ public class CreatePetTest extends TestBase {
 
     @Test
     public void createRandomPet() {
-        PetResponse pet = PetSpecs.createRandomPet();
+        PetTypeResponse pet = PetTypeSpecs.createRandomPetType();
 
         assertNotNull(pet.getId());
         assertNotNull(pet.getName());
