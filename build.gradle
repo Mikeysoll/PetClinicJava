@@ -40,3 +40,22 @@ tasks.withType(Test) {
         }
     }
 }
+
+task ownerTest(type: Test) {
+    useJUnitPlatform {
+        includeTags 'owner'
+    }
+}
+
+task petTest(type: Test) {
+    useJUnitPlatform {
+        includeTags 'pet'
+    }
+}
+
+task endToEndTest(type: Test) {
+    useJUnitPlatform {
+        includeTags 'e2e'
+    }
+}
+

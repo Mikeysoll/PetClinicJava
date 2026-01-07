@@ -3,6 +3,7 @@ package tests.pets;
 import base.RequestSpec;
 import base.TestBase;
 import dto.pet.PetResponse;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import specs.PetSpecs;
 
@@ -13,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class DeletePetTest extends TestBase {
 
     @Test
+    @Tag("pet")
     public void deletePetTest() {
         PetResponse pet = PetSpecs.createRandomPet();
 

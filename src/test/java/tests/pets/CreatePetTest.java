@@ -2,6 +2,7 @@ package tests.pets;
 
 import base.TestBase;
 import dto.pet.PetResponse;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import specs.PetSpecs;
 
@@ -12,6 +13,7 @@ import static specs.PetSpecs.*;
 public class CreatePetTest extends TestBase {
 
     @Test
+    @Tag("pet")
     public void createPetTest() {
         PetResponse pet = createPet("kitten");
 
