@@ -5,6 +5,20 @@ API основан на официальном репозитории: [spring-p
 
 ---
 
+## Содержание
+
+* <a href="#annotation">Описание</a>
+* <a href="#tools">Инструменты</a>
+* <a href="#locallyapi">Поднятие API локально</a>
+* <a href="#projectstructure">Структура проекта</a>
+* <a href="#runtests">Запуск тестов</a>
+* <a href="#allure">Отчеты в Allure</a>
+* <a href="#telegram">Уведомления в Telegram с использованием бота</a>
+* <a href="#apiexamples">Примеры эндпоинтов API и запросов</a>
+* <a href="#e2esc">E2E сценарий</a>
+
+---
+
 <a id="annotation"></a>
 ## Описание
 Тестовый проект состоит из веб-тестов.
@@ -16,19 +30,7 @@ API основан на официальном репозитории: [spring-p
 - [x] Использование request/response спецификаций для API тестов
 - [x] Автотесты оформлены как тестовая документация посредством аннотаций `Allure`
 
-Spring PetClinic — демонстрационное приложение для управления клиникой для питомцев.
-В этом проекте реализованы тесты для **REST API** с использованием:
-<a id="tools"></a>
-<a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="images/logo/IntelliJ_IDEA.png" width="50"/></a>
-<a href="https://github.com/"><img alt="GitHub" height="50" src="images/logo/GitHub.png" width="50"/></a>  
-<a href="https://www.java.com/"><img alt="Java" height="50" src="images/logo/Java_logo.png" width="50"/></a>
-<a href="https://gradle.org/"><img alt="Gradle" height="50" src="images/logo/Gradle.png" width="50"/></a>  
-<a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="images/logo/JUnit5.png" width="50"/></a>
-<a href="https://rest-assured.io/"><img alt="RestAssured" height="50" src="images/logo/RestAssured.png" width="50"/></a>
-<a href="https://github.com/allure-framework/"><img alt="Allure Report" height="50" src="images/logo/AllureReports.png" width="50"/></a>
-<a href="https://telegram.org/"><img alt="Telegram" height="50" src="images/logo/Telegram.png" width="50"/></a>
-
-
+Spring PetClinic — демонстрационное приложение для управления клиникой для питомцев.  
 Тесты покрывают все ключевые сущности приложения:
 
 * **Owners** — владельцы животных
@@ -40,6 +42,26 @@ Spring PetClinic — демонстрационное приложение дл�
 
 ---
 
+<a id="tools"></a>
+## Технологии и инструменты
+В этом проекте реализованы тесты для **REST API** с использованием:
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: center; margin: 16px 0;">
+  <a href="https://www.jetbrains.com/idea/"><img alt="IntelliJ IDEA" height="50" src="images/logo/IntelliJ_IDEA.png" width="50"/></a>
+  <a href="https://github.com/"><img alt="GitHub" height="50" src="images/logo/GitHub.png" width="50"/></a>
+  <a href="https://www.java.com/"><img alt="Java" height="50" src="images/logo/Java_logo.png" width="50"/></a>
+  <a href="https://gradle.org/"><img alt="Gradle" height="50" src="images/logo/Gradle.png" width="50"/></a>
+  <a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="images/logo/JUnit5.png" width="50"/></a>
+  <a href="https://rest-assured.io/"><img alt="RestAssured" height="50" src="images/logo/RestAssured.png" width="50"/></a>
+  <a href="https://github.com/allure-framework/"><img alt="Allure Report" height="50" src="images/logo/AllureReports.png" width="50"/></a>
+  <a href="https://telegram.org/"><img alt="Telegram" height="50" src="images/logo/Telegram.png" width="50"/></a>
+</div>
+
+Автотесты в этом проекте написаны на Java с использованием библиотеки [Rest Assured](https://rest-assured.io/).
+
+---
+
+<a id="locallyapi"></a>
 ## Поднятие API локально
 
 Для запуска тестов необходимо, чтобы API работал локально.
@@ -57,6 +79,7 @@ http://localhost:9966/petclinic/api
 
 ---
 
+<a id="projectstructure"></a>
 ## Структура проекта
 
 ```
@@ -74,6 +97,7 @@ src/test/java/
 
 ---
 
+<a id="runtests"></a>
 ## Запуск тестов
 
 Тесты можно запускать через Gradle:
@@ -92,6 +116,48 @@ gradle clean pet
 
 ---
 
+<a id="allure"></a>
+## Отчеты в <a target="_blank" href="https://jenkins.autotests.cloud/job/AutomationExerciseJava/"> Allure report </a> 
+
+Allure-отчет включает в себя:
+
+- **Статус тестов**: пройдено, провалено, пропущено.  
+- **Интерактивную инфографику**: диаграмму по выполнению тестов, распределение по тегам, процент прохождения.  
+- **Детализированные шаги выполнения тестов**: последовательность действий и проверок.  
+- **Вспомогательные артефакты**:
+  - Скриншоты страниц в момент завершения автотеста  
+  - Page Source  
+  - Логи браузерной консоли  
+  - Видео выполнения автотеста
+
+### Основное окно
+
+<p align="center">
+<img src="images/screenshots/AllureOverview.png">
+</p>
+
+### Тесты
+
+<p align="center">
+<img src="images/screenshots/AllureBehaviors.png">
+</p>
+
+### Графики
+
+<p align="center">
+<img src="images/screenshots/AllureGraphs.png">
+</p>
+
+<a id="telegram"></a>
+## Уведомления в Telegram с использованием бота
+
+<p>
+<img src="images/screenshots/TelegramBot.png">
+</p>
+
+---
+
+<a id="apiexamples"></a>
 ## Примеры эндпоинтов API и запросов
 
 ### Owners
@@ -191,6 +257,7 @@ POST http://localhost:9966/petclinic/api/specialties
 
 ---
 
+<a id="e2esc"></a>
 ## E2E сценарий
 
 Пример полного пользовательского сценария, покрытого тестом `OwnerPetVisitE2ETest.java`:
