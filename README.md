@@ -116,6 +116,32 @@ gradle clean pet
 
 ---
 
+<a id="allure"></a>
+## Отчеты в <a target="_blank" href="https://jenkins.autotests.cloud/job/AutomationExerciseJava/"> Allure report </a> 
+
+Allure-отчет включает в себя:
+
+- **Статус тестов**: пройдено, провалено, пропущено.  
+- **Интерактивную инфографику**: диаграмму по выполнению тестов, распределение по тегам, процент прохождения.  
+- **Детализированные шаги выполнения тестов**: последовательность действий и проверок.  
+- **Вспомогательные артефакты**:
+  - Скриншоты страниц в момент завершения автотеста  
+  - Page Source  
+  - Логи браузерной консоли  
+  - Видео выполнения автотеста
+
+### Основное окно
+
+<p align="center">
+<img src="images/screenshots/AllureOverview.png">
+</p>
+
+### Тесты
+
+<p align="center">
+<img src="images/screenshots/AllureBehaviors.png">
+</p>
+
 ### Графики
 
 <p align="center">
