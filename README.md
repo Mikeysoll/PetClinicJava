@@ -18,7 +18,7 @@ API основан на официальном репозитории: [spring-p
 
 Spring PetClinic — демонстрационное приложение для управления клиникой для питомцев.
 В этом проекте реализованы тесты для **REST API** с использованием:
-<a id="tools"></a>
+
 <a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="images/logo/IntelliJ_IDEA.png" width="50"/></a>
 <a href="https://github.com/"><img alt="GitHub" height="50" src="images/logo/GitHub.png" width="50"/></a>  
 <a href="https://www.java.com/"><img alt="Java" height="50" src="images/logo/Java_logo.png" width="50"/></a>
