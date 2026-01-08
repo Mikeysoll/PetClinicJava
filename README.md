@@ -152,7 +152,7 @@ Allure-отчет включает в себя:
 ## Уведомления в Telegram с использованием бота
 
 <p>
-<img src="images/screenshots/TelegramBot.png">
+<img src="images/screenshots/TelegramSS.png">
 </p>
 
 ---
