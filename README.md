@@ -191,7 +191,7 @@ GET http://localhost:9966/petclinic/api/pets
 
 **POST /pets** — добавить питомца
 
-```json
+```http
 POST http://localhost:9966/petclinic/api/pets
 {
   "name": "Buddy",
