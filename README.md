@@ -12,6 +12,8 @@ API основан на официальном репозитории: [spring-p
 * <a href="#locallyapi">Поднятие API локально</a>
 * <a href="#projectstructure">Структура проекта</a>
 * <a href="#runtests">Запуск тестов</a>
+* <a href="#allure">Отчеты в Allure</a>
+* <a href="#telegram">Уведомления в Telegram с использованием бота</a>
 * <a href="#apiexamples">Примеры эндпоинтов API и запросов</a>
 * <a href="#e2esc">E2E сценарий</a>
 
@@ -111,6 +113,21 @@ gradle clean pet
 
 * Открой нужный тестовый класс
 * Правый клик → **Run**
+
+---
+
+### Графики
+
+<p align="center">
+<img src="images/screenshots/AllureGraphs.png">
+</p>
+
+<a id="telegram"></a>
+## Уведомления в Telegram с использованием бота
+
+<p>
+<img src="images/screenshots/TelegramBot.png">
+</p>
 
 ---
 
