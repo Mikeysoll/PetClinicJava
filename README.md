@@ -17,8 +17,9 @@ API основан на официальном репозитории: [spring-p
 - [x] Автотесты оформлены как тестовая документация посредством аннотаций `Allure`
 
 Spring PetClinic — демонстрационное приложение для управления клиникой для питомцев.
-В этом проекте реализованы тесты для **REST API** с использованием:
 
+## Технологии и инструменты
+В этом проекте реализованы тесты для **REST API** с использованием:
 <a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="images/logo/IntelliJ_IDEA.png" width="50"/></a>
 <a href="https://github.com/"><img alt="GitHub" height="50" src="images/logo/GitHub.png" width="50"/></a>  
 <a href="https://www.java.com/"><img alt="Java" height="50" src="images/logo/Java_logo.png" width="50"/></a>
