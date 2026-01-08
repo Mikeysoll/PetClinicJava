@@ -170,7 +170,7 @@ GET http://localhost:9966/petclinic/api/owners
 
 **POST /owners** — создать нового владельца
 
-```json
+```bash
 POST http://localhost:9966/petclinic/api/owners
 {
   "firstName": "Jane",
@@ -191,7 +191,7 @@ GET http://localhost:9966/petclinic/api/pets
 
 **POST /pets** — добавить питомца
 
-```http
+```bash
 POST http://localhost:9966/petclinic/api/pets
 {
   "name": "Buddy",
@@ -210,7 +210,7 @@ GET http://localhost:9966/petclinic/api/pettypes
 
 **POST /pettypes** — добавить новый тип
 
-```json
+```bash
 POST http://localhost:9966/petclinic/api/pettypes
 {
   "name": "Dog"
@@ -221,7 +221,7 @@ POST http://localhost:9966/petclinic/api/pettypes
 
 **POST /visits** — добавить визит
 
-```json
+```bash
 POST http://localhost:9966/petclinic/api/visits
 {
   "petId": 1,
@@ -248,7 +248,7 @@ GET http://localhost:9966/petclinic/api/specialties
 
 **POST /specialties** — добавить новую специализацию
 
-```json
+```bash
 POST http://localhost:9966/petclinic/api/specialties
 {
   "name": "surgery"
