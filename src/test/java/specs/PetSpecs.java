@@ -11,6 +11,7 @@ import dto.pettype.PetTypeRequestWithId;
 import dto.pettype.PetTypeResponse;
 import io.qameta.allure.Step;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -19,24 +20,26 @@ import static io.restassured.RestAssured.given;
 public class PetSpecs {
 
     @Step("Create a random pet for owner ID: {ownerId}")
-    public static PetResponse createRandomPet(int ownerId) throws Exception {
+    public static PetResponse createRandomPet(int ownerId) throws ParseException {
 
         Faker faker = new Faker();
         String name = faker.name().firstName();
 
-        String birthDateStr = new SimpleDateFormat("yyyy-MM-dd")
-                .format(faker.date().between(new SimpleDateFormat("yyyy-MM-dd").parse("2010-01-01"), new Date()));
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date startDate = sdf.parse("2010-01-01");
+        String birthDateStr = sdf.format(faker.date().between(startDate, new Date()));
 
         PetTypeResponse randomType = PetTypeSpecs.createRandomPetType();
         PetTypeRequestWithId typeRequest = new PetTypeRequestWithId(randomType.getId(), randomType.getName());
 
+        PetRequestWithTypeId request = new PetRequestWithTypeId(name, birthDateStr, typeRequest);
+
         return given()
                 .spec(RequestSpec.baseRequestSpec())
-                .body(new PetRequestWithTypeId(name, birthDateStr, typeRequest))
+                .body(request)
                 .when()
                 .post("/api/owners/{ownerId}/pets", ownerId)
                 .then()
-                .log().body()
                 .spec(ResponseSpec.created201())
                 .extract().as(PetResponse.class);
     }
