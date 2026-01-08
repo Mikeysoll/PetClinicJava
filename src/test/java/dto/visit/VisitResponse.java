@@ -12,6 +12,6 @@ import lombok.NoArgsConstructor;
 public class VisitResponse {
     private String date;
     private String description;
-    private int id;
-    private String petId;
+    private Integer id;
+    private Integer petId;
 }
