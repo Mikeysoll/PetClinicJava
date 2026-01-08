@@ -5,13 +5,17 @@ import base.ResponseSpec;
 import com.github.javafaker.Faker;
 import dto.pettype.PetTypeRequest;
 import dto.pettype.PetTypeResponse;
+import io.qameta.allure.Step;
 
 import static io.restassured.RestAssured.given;
 
 public class PetTypeSpecs {
 
-    public static PetTypeResponse createPet(String name) {
-        PetTypeRequest request = new PetTypeRequest(name);
+    @Step("Create a random pet type")
+    public static PetTypeResponse createRandomPetType() {
+        Faker faker = new Faker();
+        String randomName = faker.animal().name();
+        PetTypeRequest request = new PetTypeRequest(randomName);
 
         return given()
                 .spec(RequestSpec.baseRequestSpec())
@@ -24,12 +28,7 @@ public class PetTypeSpecs {
                 .extract().as(PetTypeResponse.class);
     }
 
-    public static PetTypeResponse createRandomPetType() {
-        Faker faker = new Faker();
-        String randomName = faker.animal().name();
-        return createPet(randomName);
-    }
-
+    @Step("Get all pet types")
     public static PetTypeResponse[] getAllPetTypes() {
         return given()
                 .spec(RequestSpec.baseRequestSpec())
@@ -41,6 +40,7 @@ public class PetTypeSpecs {
                 .extract().as(PetTypeResponse[].class);
     }
 
+    @Step("Delete pet type by ID: {id}")
     public static void deletePetType(int id) {
         given()
                 .spec(RequestSpec.baseRequestSpec())

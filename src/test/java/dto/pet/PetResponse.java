@@ -18,6 +18,6 @@ public class PetResponse {
     private String birthDate;
     private PetTypeResponse type;
     private Integer id;
-    private String ownerId;
+    private int ownerId;
     private List<VisitResponse> visits;
 }

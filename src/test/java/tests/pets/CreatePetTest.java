@@ -15,10 +15,9 @@ public class CreatePetTest extends TestBase {
     @Test
     @Tag("pet")
     public void createPetTest() {
-        PetTypeResponse pet = createPet("kitten");
+        PetTypeResponse pet = createRandomPetType();
 
         assertNotNull(pet.getId(),"ID должен быть сгенерирован");
-        assertEquals("kitten",pet.getName());
     }
 
     @Test

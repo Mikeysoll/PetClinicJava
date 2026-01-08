@@ -9,6 +9,7 @@ import dto.pet.PetResponse;
 import dto.pettype.PetTypeRequest;
 import dto.pettype.PetTypeRequestWithId;
 import dto.pettype.PetTypeResponse;
+import io.qameta.allure.Step;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -17,19 +18,7 @@ import static io.restassured.RestAssured.given;
 
 public class PetSpecs {
 
-    public static PetResponse createPet(int ownerId, String name, String birthDate, PetTypeRequest type) {
-        PetRequest request = new PetRequest(name, birthDate, type);
-        return given()
-                .spec(RequestSpec.baseRequestSpec())
-                .body(request)
-                .when()
-                .post("/api/owners/{ownerId}/pets", ownerId)
-                .then()
-                .log().body()
-                .spec(ResponseSpec.created201())
-                .extract().as(PetResponse.class);
-    }
-
+    @Step("Create a random pet for owner ID: {ownerId}")
     public static PetResponse createRandomPet(int ownerId) throws Exception {
 
         Faker faker = new Faker();
@@ -52,6 +41,7 @@ public class PetSpecs {
                 .extract().as(PetResponse.class);
     }
 
+    @Step("Get pet by ID: {petId}")
     public static PetResponse getPetById(int petId) {
         return given()
                 .spec(RequestSpec.baseRequestSpec())

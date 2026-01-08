@@ -12,6 +12,4 @@ import lombok.NoArgsConstructor;
 public class VisitRequest {
     private String date;
     private String description;
-    private String petId;
-
 }

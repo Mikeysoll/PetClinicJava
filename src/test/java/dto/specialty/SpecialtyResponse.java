@@ -1,4 +1,4 @@
-package dto.visit;
+package dto.specialty;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -9,9 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class VisitResponse {
-    private String date;
-    private String description;
-    private int id;
-    private String petId;
+public class SpecialtyResponse {
+
+    private Integer id;
+    private String name;
 }
