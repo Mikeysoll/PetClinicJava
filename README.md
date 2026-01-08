@@ -27,6 +27,7 @@ Spring PetClinic — демонстрационное приложение дл�
 <a href="https://rest-assured.io/"><img alt="RestAssured" height="50" src="images/logo/RestAssured.png" width="50"/></a>
 <a href="https://github.com/allure-framework/"><img alt="Allure Report" height="50" src="images/logo/AllureReports.png" width="50"/></a>
 <a href="https://telegram.org/"><img alt="Telegram" height="50" src="images/logo/Telegram.png" width="50"/></a>
+Автотесты в этом проекте написаны на Java с использованием библиотеки [Rest Assured](https://rest-assured.io/).
 
 
 Тесты покрывают все ключевые сущности приложения:
