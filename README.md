@@ -65,6 +65,9 @@ src/test/java/
 
 ```bash
 gradle clean test
+gradle clean e2e
+gradle clean owner
+gradle clean pet
 ```
 
 Или через IDE (IntelliJ IDEA, Eclipse):
