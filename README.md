@@ -5,14 +5,29 @@ API основан на официальном репозитории: [spring-p
 
 ---
 
-## Описание проекта
+<a id="annotation"></a>
+## Описание
+Тестовый проект состоит из веб-тестов.
+Содержание проекта:
+- [x] `POJO` проектирование
+- [x] Возможность локального запуска тестов
+- [x] Использование `Faker` для генерации данных
+- [x] Использование `Lombok` для моделей в API тестах
+- [x] Использование request/response спецификаций для API тестов
+- [x] Автотесты оформлены как тестовая документация посредством аннотаций `Allure`
 
 Spring PetClinic — демонстрационное приложение для управления клиникой для питомцев.
 В этом проекте реализованы тесты для **REST API** с использованием:
+<a id="tools"></a>
+<a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="images/logo/IntelliJ_IDEA.png" width="50"/></a>
+<a href="https://github.com/"><img alt="GitHub" height="50" src="images/logo/GitHub.png" width="50"/></a>  
+<a href="https://www.java.com/"><img alt="Java" height="50" src="images/logo/Java_logo.png" width="50"/></a>
+<a href="https://gradle.org/"><img alt="Gradle" height="50" src="images/logo/Gradle.png" width="50"/></a>  
+<a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="images/logo/JUnit5.png" width="50"/></a>
+<a href="https://rest-assured.io/"><img alt="RestAssured" height="50" src="images/logo/RestAssured.png" width="50"/></a>
+<a href="https://github.com/allure-framework/"><img alt="Allure Report" height="50" src="images/logo/AllureReports.png" width="50"/></a>
+<a href="https://telegram.org/"><img alt="Telegram" height="50" src="images/logo/Telegram.png" width="50"/></a>
 
-* Java 17
-* JUnit 5
-* RestAssured
 
 Тесты покрывают все ключевые сущности приложения:
 
