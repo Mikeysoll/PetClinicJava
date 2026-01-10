@@ -75,7 +75,7 @@ docker run -p 9966:9966 springcommunity/spring-petclinic-rest
 После запуска API будет доступен по адресу:
 
 ```
-http://localhost:9966/petclinic/api
+http://localhost:9966/petclinic/swagger-ui/index.html
 ```
 
 ---
