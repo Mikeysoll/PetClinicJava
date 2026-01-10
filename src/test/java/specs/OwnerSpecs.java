@@ -29,7 +29,6 @@ public class OwnerSpecs {
                 .when()
                 .post("/api/owners")
                 .then()
-                .log().body()
                 .spec(ResponseSpec.created201())
                 .extract().as(OwnerResponse.class);
     }
@@ -41,7 +40,6 @@ public class OwnerSpecs {
                 .when()
                 .get("/api/owners")
                 .then()
-                .log().body()
                 .spec(ResponseSpec.ok200())
                 .extract().as(OwnerResponse[].class);
     }
@@ -53,7 +51,6 @@ public class OwnerSpecs {
                 .when()
                 .delete("/api/owners/" + id)
                 .then()
-                .log().body()
                 .spec(ResponseSpec.noContent204());
     }
 

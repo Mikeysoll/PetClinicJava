@@ -23,7 +23,6 @@ public class PetTypeSpecs {
                 .when()
                 .post("/api/pettypes")
                 .then()
-                .log().body()
                 .spec(ResponseSpec.created201())
                 .extract().as(PetTypeResponse.class);
     }
@@ -35,7 +34,6 @@ public class PetTypeSpecs {
                 .when()
                 .get("/api/pettypes")
                 .then()
-                .log().body()
                 .spec(ResponseSpec.ok200())
                 .extract().as(PetTypeResponse[].class);
     }
@@ -47,7 +45,6 @@ public class PetTypeSpecs {
                 .when()
                 .delete("/api/pettypes/{id}", id)
                 .then()
-                .log().body()
                 .spec(ResponseSpec.noContent204());
     }
 }
