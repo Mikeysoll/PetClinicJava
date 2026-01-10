@@ -4,9 +4,7 @@ import base.RequestSpec;
 import base.ResponseSpec;
 import com.github.javafaker.Faker;
 import dto.pet.PetRequest;
-import dto.pet.PetRequestWithTypeId;
 import dto.pet.PetResponse;
-import dto.pettype.PetTypeRequest;
 import dto.pettype.PetTypeRequestWithId;
 import dto.pettype.PetTypeResponse;
 import io.qameta.allure.Step;
@@ -32,7 +30,7 @@ public class PetSpecs {
         PetTypeResponse randomType = PetTypeSpecs.createRandomPetType();
         PetTypeRequestWithId typeRequest = new PetTypeRequestWithId(randomType.getId(), randomType.getName());
 
-        PetRequestWithTypeId request = new PetRequestWithTypeId(name, birthDateStr, typeRequest);
+        PetRequest request = new PetRequest(name, birthDateStr, typeRequest);
 
         return given()
                 .spec(RequestSpec.baseRequestSpec())

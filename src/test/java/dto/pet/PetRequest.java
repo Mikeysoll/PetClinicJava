@@ -1,8 +1,7 @@
 package dto.pet;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import dto.pettype.PetTypeRequest;
-import dto.pettype.PetTypeResponse;
+import dto.pettype.PetTypeRequestWithId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,5 +13,5 @@ import lombok.NoArgsConstructor;
 public class PetRequest {
     private String name;
     private String birthDate;
-    private PetTypeRequest type;
+    private PetTypeRequestWithId type;
 }
