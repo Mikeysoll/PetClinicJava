@@ -10,8 +10,6 @@ import specs.OwnerSpecs;
 
 import static assertions.OwnerAssertions.assertOwnerIsValid;
 import static io.restassured.RestAssured.given;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class DeleteOwnerTest extends TestBase {
 

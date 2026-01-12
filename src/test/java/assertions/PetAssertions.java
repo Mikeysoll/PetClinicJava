@@ -1,6 +1,5 @@
 package assertions;
 
-import dto.owner.OwnerResponse;
 import dto.pet.PetResponse;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;

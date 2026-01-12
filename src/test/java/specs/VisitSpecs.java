@@ -3,7 +3,6 @@ package specs;
 import base.RequestSpec;
 import base.ResponseSpec;
 import com.github.javafaker.Faker;
-import dto.vet.VetResponse;
 import dto.visit.VisitRequest;
 import dto.visit.VisitResponse;
 import io.qameta.allure.Step;

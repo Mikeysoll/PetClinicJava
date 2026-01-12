@@ -2,9 +2,7 @@ package specs;
 
 import base.RequestSpec;
 import base.ResponseSpec;
-import com.github.javafaker.Faker;
 import dto.specialty.SpecialtyRequest;
-import dto.specialty.SpecialtyResponse;
 import dto.vet.VetRequest;
 import dto.vet.VetResponse;
 import io.qameta.allure.Step;

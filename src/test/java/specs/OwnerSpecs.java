@@ -1,9 +1,7 @@
 package specs;
 
-
 import base.RequestSpec;
 import base.ResponseSpec;
-import com.github.javafaker.Faker;
 import dto.owner.OwnerRequest;
 import dto.owner.OwnerResponse;
 import io.qameta.allure.Step;
@@ -13,24 +11,48 @@ import static io.restassured.RestAssured.given;
 
 public class OwnerSpecs {
 
+    @Step("Generating owner data")
+    private static OwnerRequest generateOwnerData() {
+        return new OwnerRequest(
+                faker.name().firstName(),
+                faker.name().lastName(),
+                faker.address().fullAddress(),
+                faker.address().city(),
+                faker.number().digits(10)
+        );
+    }
+
     @Step("Create a random owner")
     public static OwnerResponse createRandomOwner() {
-        String firstName = faker.name().firstName();
-        String lastName = faker.name().lastName();
-        String address = faker.address().fullAddress();
-        String city = faker.address().city();
-        String telephone = faker.number().digits(10);
-
-        OwnerRequest request = new OwnerRequest(firstName, lastName, address, city, telephone);
+        OwnerRequest request = generateOwnerData();
 
         return given()
                 .spec(RequestSpec.baseRequestSpec())
+                .log().body()
                 .body(request)
                 .when()
                 .post("/api/owners")
                 .then()
+                .log().ifValidationFails()
+                .log().body()
                 .spec(ResponseSpec.created201())
                 .extract().as(OwnerResponse.class);
+    }
+
+    @Step("Full owner update (ownerId = {ownerId})")
+    public static OwnerResponse updateOwner(int ownerId) {
+        OwnerRequest newOwnerData = generateOwnerData();
+
+        given()
+                .spec(RequestSpec.baseRequestSpec())
+                .log().body()                 // новые данные
+                .body(newOwnerData)
+                .when()
+                .put("/api/owners/{ownerId}", ownerId)
+                .then()
+                .log().ifValidationFails()
+                .spec(ResponseSpec.noContent204());
+        return getOwnerById(ownerId);
     }
 
     @Step("Get all owners")
@@ -40,18 +62,10 @@ public class OwnerSpecs {
                 .when()
                 .get("/api/owners")
                 .then()
+                .log().ifValidationFails()
+                .log().body()
                 .spec(ResponseSpec.ok200())
                 .extract().as(OwnerResponse[].class);
-    }
-
-    @Step("Delete owner by ID: {id}")
-    public static void deleteOwner(int id) {
-        given()
-                .spec(RequestSpec.baseRequestSpec())
-                .when()
-                .delete("/api/owners/" + id)
-                .then()
-                .spec(ResponseSpec.noContent204());
     }
 
     @Step("Get owner by ID: {ownerId}")
@@ -61,7 +75,20 @@ public class OwnerSpecs {
                 .when()
                 .get("/api/owners/{ownerId}", ownerId)
                 .then()
+                .log().ifValidationFails()
+                .log().body()
                 .spec(ResponseSpec.ok200())
                 .extract().as(OwnerResponse.class);
+    }
+
+    @Step("Delete owner by ID: {ownerId}")
+    public static void deleteOwner(int ownerId) {
+        given()
+                .spec(RequestSpec.baseRequestSpec())
+                .when()
+                .delete("/api/owners/{ownerId}", ownerId)
+                .then()
+                .log().ifValidationFails()
+                .spec(ResponseSpec.noContent204());
     }
 }
