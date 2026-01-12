@@ -8,13 +8,13 @@ import dto.owner.OwnerRequest;
 import dto.owner.OwnerResponse;
 import io.qameta.allure.Step;
 
+import static base.TestData.faker;
 import static io.restassured.RestAssured.given;
 
 public class OwnerSpecs {
 
     @Step("Create a random owner")
     public static OwnerResponse createRandomOwner() {
-        Faker faker = new Faker();
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         String address = faker.address().fullAddress();

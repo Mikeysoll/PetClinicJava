@@ -13,6 +13,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static base.TestData.faker;
 import static io.restassured.RestAssured.given;
 
 public class PetSpecs {
@@ -20,7 +21,6 @@ public class PetSpecs {
     @Step("Create a random pet for owner ID: {ownerId}")
     public static PetResponse createRandomPet(int ownerId) throws ParseException {
 
-        Faker faker = new Faker();
         String name = faker.name().firstName();
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

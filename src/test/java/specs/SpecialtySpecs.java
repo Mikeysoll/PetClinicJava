@@ -5,16 +5,17 @@ import base.ResponseSpec;
 import dto.specialty.SpecialtyRequest;
 import dto.specialty.SpecialtyResponse;
 import io.qameta.allure.Step;
-import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
 public class SpecialtySpecs {
-    @Step("Create a specialty with name: anesthesiologist")
+    public static final String SPECIALITY = "anesthesiologist";
+
+    @Step("Create a specialty")
     public static SpecialtyResponse createSpecialty() {
         return given()
                 .spec(RequestSpec.baseRequestSpec())
-                .body(new SpecialtyRequest("anesthesiologist"))
+                .body(new SpecialtyRequest(SPECIALITY))
                 .when()
                 .post("/api/specialties")
                 .then()
