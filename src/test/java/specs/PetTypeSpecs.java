@@ -26,7 +26,6 @@ public class PetTypeSpecs {
                 .spec(ResponseSpec.created201())
                 .extract().as(PetTypeResponse.class);
     }
-
     @Step("Get all pet types")
     public static PetTypeResponse[] getAllPetTypes() {
         return given()

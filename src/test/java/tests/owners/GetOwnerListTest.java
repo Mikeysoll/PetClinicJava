@@ -2,6 +2,7 @@ package tests.owners;
 
 import base.TestBase;
 import dto.owner.OwnerResponse;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +13,7 @@ public class GetOwnerListTest extends TestBase {
 
     @Test
     @Tag("owner")
+    @DisplayName("Получение непустого массива владельцев")
     public void getOwnerListTest() {
         OwnerResponse[] owners = getAllOwners();
         assertTrue(owners.length > 0, "Список владельцев не должен быть пустым.");

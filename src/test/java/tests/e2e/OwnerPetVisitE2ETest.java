@@ -7,6 +7,7 @@ import dto.pet.PetResponse;
 import dto.specialty.SpecialtyResponse;
 import dto.vet.VetResponse;
 import dto.visit.VisitResponse;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import specs.*;
@@ -16,12 +17,13 @@ import static assertions.PetAssertions.assertPetIsValid;
 import static org.junit.jupiter.api.Assertions.*;
 import static specs.OwnerSpecs.getOwnerById;
 import static specs.PetSpecs.getPetById;
+import static specs.SpecialtySpecs.SPECIALITY;
 
 @Tag("e2e")
 public class OwnerPetVisitE2ETest extends TestBase {
 
     @Test
-    @Tag("e2e")
+    @DisplayName("E2E: Создание владельца, питомца и запись на визит")
     public void ownerCanCreatePetAndBookVisit() throws Exception {
         // 1. Создать владельца
         OwnerResponse ownerResponse = OwnerSpecs.createRandomOwner();
@@ -36,11 +38,11 @@ public class OwnerPetVisitE2ETest extends TestBase {
         // 3. Создать специализацию
         SpecialtyResponse specialty = SpecialtySpecs.createSpecialty();
         assertNotNull(specialty.getId(), "Специальность не должна быть пустой");
-        assertEquals("anesthesiologist", specialty.getName(), "Специальность должно совпадать");
+        assertEquals(SPECIALITY, specialty.getName(), "Специальность должно совпадать");
 
         // 4. Создать врача
         VetResponse vetResponse = VetSpecs.createRandomVet();
-        assertNotNull(vetResponse.getId(), "Ветеринар должен сущестовать");
+        assertNotNull(vetResponse.getId(), "Ветеринар должен существовать");
         assertNotNull(vetResponse.getFirstName(), "Имя врача не должно быть пустым");
         assertNotNull(vetResponse.getLastName(), "Фамилия врача не должна быть пустой");
         assertTrue(vetResponse.getSpecialties().size() > 0, "Ветеринар должен иметь специальность");

@@ -58,4 +58,3 @@ task endToEndTest(type: Test) {
         includeTags 'e2e'
     }
 }
-

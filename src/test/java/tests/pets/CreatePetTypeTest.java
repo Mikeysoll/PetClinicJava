@@ -10,21 +10,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static specs.PetTypeSpecs.*;
 
-public class CreatePetTest extends TestBase {
-
-    @Test
-    @Tag("pet")
-    public void createPetTypeTest() {
-        PetTypeResponse pet = createRandomPetType();
-
-        assertNotNull(pet.getId(),"ID должен быть сгенерирован");
-    }
+@Tag("pet")
+public class CreatePetTypeTest extends TestBase {
 
     @Test
     public void createRandomPet() {
         PetTypeResponse pet = PetTypeSpecs.createRandomPetType();
 
-        assertNotNull(pet.getId());
+        assertNotNull(pet.getId(),"ID должен быть сгенерирован");
         assertNotNull(pet.getName());
     }
 }

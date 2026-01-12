@@ -1,13 +1,13 @@
 package base;
 
+import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;
-import static io.restassured.RestAssured.*;
 
 public class TestBase {
 
     @BeforeAll
     static void setup() {
-        baseURI = "http://localhost:9966";
-        basePath = "/petclinic";
+        RestAssured.baseURI = System.getProperty("baseURI", "http://localhost:9966");
+        RestAssured.basePath = "/petclinic";
     }
 }

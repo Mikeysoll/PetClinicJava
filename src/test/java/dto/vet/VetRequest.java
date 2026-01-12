@@ -2,7 +2,6 @@ package dto.vet;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import dto.specialty.SpecialtyRequest;
-import dto.specialty.SpecialtyResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

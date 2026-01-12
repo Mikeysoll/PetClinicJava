@@ -11,11 +11,11 @@ import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class DeletePetTest extends TestBase {
+public class DeletePetTypeTest extends TestBase {
 
     @Test
     @Tag("pet")
-    public void deletePetTest() {
+    public void deletePetTypeTest() {
         PetTypeResponse pet = PetTypeSpecs.createRandomPetType();
 
         assertNotNull(pet.getId());
