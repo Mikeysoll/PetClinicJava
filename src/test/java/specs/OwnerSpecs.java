@@ -45,7 +45,7 @@ public class OwnerSpecs {
 
         given()
                 .spec(RequestSpec.baseRequestSpec())
-                .log().body()                 // новые данные
+                .log().body()
                 .body(newOwnerData)
                 .when()
                 .put("/api/owners/{ownerId}", ownerId)
